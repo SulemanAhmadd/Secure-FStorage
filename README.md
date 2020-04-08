@@ -35,6 +35,13 @@ This will start all the docker containers. Wait for the following message to sho
 I hope it was super easy to set up. Open your browser and go to the following url:\
 http://localhost:8080
 
+
+*Note:* For closing and rebuilding the app, please make sure all previous containers have been stopped or removed:
+```
+docker-compose down
+```
+This allows rebuilding the database everytime without getting 'table already exists' error for postgres container.
+
 ## Future Tasks
 - Integrate and configure Caddy reverse proxy for testing over TLS
 - Use React for developing front end
