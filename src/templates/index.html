@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.logoutLblPos{
+   position:fixed;
+   right:10px;
+   top:50px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+a {
+  color: dodgerblue;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1> Welcome {{.UserName}}! </h1>
+
+{{ with .ErrorMsg }}
+<p  style="color:red" class="error">{{ . }}</p>
+{{ end }}
+
+<h2> Your Files: </h2>
+
+<ul>  
+{{range .Filenames}}
+<li> {{.}}  <a href="/download/{{.}}">[download]</a></li>
+{{end}}
+</ul>  
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <label for="uploadFile">Select a file:</label>
+  <input type="file" name="uploadFile"><br><br>
+  {{ .CSRFField }}
+  <button type="submit">Upload</button>
+</form>
+
+<form align="right" method="post" action="/logout">
+  <label class="logoutLblPos">
+  <input type="submit" value="Log Out">
+  </label>
+  {{ .CSRFField }}
+</form>
+
+</div>
+</body>
+</html>
