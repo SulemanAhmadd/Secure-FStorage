@@ -22,7 +22,7 @@ Docker-compose version 1.21.0
 ## Installation and Deployment
 Open your terminal and clone this repository:
 ```
-git clone <repo name>
+git clone https://github.com/SulemanAhmadd/Secure-FStorage.git
 ```
 Got inside the directory where Docker files are and type in terminal:
 ```
