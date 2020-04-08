@@ -24,7 +24,7 @@ Open your terminal and clone this repository:
 ```
 git clone https://github.com/SulemanAhmadd/Secure-FStorage.git
 ```
-Got inside the directory where Docker files are and type in terminal:
+Go inside the project directory where Docker files are and type in terminal:
 ```
 docker-compose up --build
 ```
