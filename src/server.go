@@ -626,7 +626,7 @@ func main() {
 	router.Handle("/upload", tollbooth.LimitFuncHandler(limiter, Upload)).Methods("POST")
 
 	// Download a file
-	router.HandleFunc(`/download/{name:[a-zA-Z0-9_\-. ]+}`, Download).Methods("GET")
+	router.HandleFunc(`/download/{name:[a-zA-Z0-9_\-.(),]+}`, Download).Methods("GET")
 
 	// Logout User
 	router.HandleFunc("/logout", Logout).Methods("POST")
